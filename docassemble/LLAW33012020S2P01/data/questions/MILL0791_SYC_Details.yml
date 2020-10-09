@@ -6,8 +6,11 @@ question: |
 fields:
   - Contact Person Name: LJLJsycname
   - Contact Person Title: LJLJsyctitle
-  - Phone Number: LJLJsycphone
   - Mobile: LJLJsycmobile
+  - Phone Number: LJLJsycphone
+    default: 08 8405 8500
   - Email: LJLJsycemail
+    default: communications@syc.net.au
   - Address: LJLJsycaddress
+    default: 39-41 Dequetteville Terrace, Kent Town SA 5067
 ---
