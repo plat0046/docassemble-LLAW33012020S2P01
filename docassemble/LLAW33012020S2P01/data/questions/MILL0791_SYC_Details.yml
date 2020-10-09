@@ -1,0 +1,13 @@
+---
+# SYC Details to input into the PDF
+Mandatory: true
+question: |
+  SYC Contact Details
+fields:
+  - Contact Person Name: LJLJsycname
+  - Contact Person Title: LJLJsyctitle
+  - Phone Number: LJLJsycphone
+  - Mobile: LJLJsycmobile
+  - Email: LJLJsycemail
+  - Address: LJLJsycaddress
+---
