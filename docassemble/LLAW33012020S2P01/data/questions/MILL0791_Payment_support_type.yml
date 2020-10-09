@@ -1,0 +1,90 @@
+---
+mandatory: true
+code: |
+  LJLJpaymentoption
+  if LJLJpaymentoption == 'Plan Management Provider (PMP)':
+    LJLJplanmanagementprovidername
+    if LJLJplanmanagementprovider_known == 'Yes':
+      LJLJ_PMP_name
+      LJLJ_continue_PMP
+    else:
+      LJLJ_continue_PMP
+  if LJLJpaymentoption == 'Self-managed':
+    LJLJ_continue_SMF
+  if LJLJpaymentoption == 'NIDA-managed funding':
+    LJLJ_continue_NDIAMF
+---
+Question: |
+  ##*PAYMENT SUPPORT*
+Subquestion: |
+  Which payment support option do you wish to use?
+fields:
+  - no label: LJLJpaymentoption
+    choices:
+    - Self-managed
+    - NIDA-managed funding
+    - Plan Management Provider (PMP)
+---
+# If Plan management provider
+Question: |
+  What Plan Management Provider are you using?
+fields:
+  - no label: LJLJplanmanagementprovidername
+    choices:
+      - Bright PMP
+      - Developing Links
+      - InstaCare
+      - Karista
+      - My Choice & Network
+      - MyIntegra
+      - MyPlanManager
+      - NDSP
+      - Plan Partners
+      - Remedy and Healthcare
+      - Other
+  - Other provider: LJLJplanmanagementprovidername
+    show if:
+      variable: LJLJplanmanagementprovidername
+      is: Other
+---
+ # Is the plan management provider information known
+question: |
+  Do you know the details of your plan manager at ${ LJLJplanmanagementprovidername }?
+fields:
+  - no label: LJLJplanmanagementprovider_known
+    datatype: radio
+    choices:
+      - Yes
+      - No
+---
+ # If it is known
+question: |
+  Your plan manager's details at ${ LJLJplanmanagementprovidername }
+fields:
+  - Name: LJLJ_PMP_name
+  - Title: LJLJ_PMP_title
+  - Phone Number: LJLJ_PMP_phonenumber
+  - Email for enquiries: LJLJ_PMP_enquiriesemail
+  - Email for invoices: LJLJ_PMP_invoiceemail
+  - Address: LJLJ_PMP_address
+  - NDIS registration: LJLJ_PMP_ndisregistration
+  - ABN: LJLJ_PMPabn
+---
+# If user selects Plan Management Provider
+question: Plan Management Provider
+subquestion: |
+  As you have nominated ${ LJLJplanmanagementprovidername } to manage your funding, SYC will invoice ${ LJLJplanmanagementprovidername } after we provide supports.
+continue button field: LJLJ_continue_PMP
+---
+# If user selects self-managed
+question: Self-managed funding
+subquestion: |
+  As you self-manage your NDIS funding, SYC will provide you with an invoice after we provide supports. 
+continue button field: LJLJ_continue_SMF
+---
+# If user selects NDIA-managed funding
+question: NDIA-managed funding
+subquestion: |
+  As you have nominated the NDIA to manage your funding, SYC will claim payment for those supports from the NDIA. We will contact you within the near future so that we can get the details of your plan provider.
+continue button field: LJLJ_continue_NDIAMF
+---
