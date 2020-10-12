@@ -1,0 +1,60 @@
+# Jannelle's Part
+---
+mandatory: True
+question: Information
+subquestion: |
+
+  #### Ending The Service Agreement
+
+  If either you or SYC want to end this Service Agreement one month’s notice must be given.
+  
+  #### Feedback, complaints, and disputes
+
+  Feedback
+  If you want to provide feedback about SYC’s NDIS supports or your worker, please   call or email the Manager of SYC’s NDIS Services:
+  
+  ###### Telephone: 08 8405 8500  
+  ###### Email: feedback@syc.net.au  
+
+  #### Complaints
+  If you are not happy with the supports provided and want to make a complaint,     please contact SYC to tell us:
+  
+  ###### Telephone:	(08) 8405 8500;
+  ask to speak with the Manager of SYC’s NDIS Services
+  ###### Email: feedback@syc.net.au
+  ###### Post to: 	SYC – Quality Management
+  Reply Paid 8241
+  GPO Box 1869, Adelaide SA 5001
+  (No stamp is needed)
+ 
+  If you are not satisfied with the Manager’s response, or you do not want to talk   with SYC, please contact the NDIS Quality and Safeguards Commission:
+  
+  •	by calling 1800 035 544 or
+  
+  •	by visiting one of their offices, or
+  
+  •	online at https://www.ndiscommission.gov.au/about/complaints.
+  
+  #### Cancellation Policy
+  If you or your representative need to cancel a scheduled appointment you must tell us at least two business days before. If you do not provide one business days’ notice, SYC may charge 90% (or such percentage as approved by the NDIA) of the cost of supports to be provided at that appointment, at our discretion. (Business days are Monday to Friday).
+
+  #### Travel
+  SYC will claim the time your worker spends travelling to provide supports up to a maximum of 30 minutes to you and, for capacity building supports, up to a maximum of 30 minutes back to your worker’s usual office. 
+  By signing your name, you agree to
+  our terms and conditions. 
+  
+  If you continue you accept these terms.
+buttons:
+  - "I accept and want to continue": continue
+  - "I do not accept": exit
+    url: https://www.syc.net.au/
+---
+# signature
+question: |
+  Sign your name
+signature: user_signature
+---
+mandatory: True
+code: |
+  user_signature.set_attributes(persistent=True)
+---
