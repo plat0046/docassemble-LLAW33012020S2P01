@@ -1,0 +1,8 @@
+#The code which puts all of our parts together
+
+Include: 
+  - SYC_ASSIGNMENT_s1.yml
+  - MILL0791_Payment_support_type.yml
+  - MILL0791_SYC_Details.yml
+  - service agreement part.yml
+---

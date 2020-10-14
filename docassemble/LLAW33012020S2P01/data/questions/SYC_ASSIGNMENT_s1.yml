@@ -1,0 +1,58 @@
+mandatory: True
+Question: Are you a person recieving care signing for yourself?
+Fields:
+  - no label: JMM_Norep
+    datatype: radio
+    choices:
+    - Yes
+    - No
+
+---
+mandatory: true
+code: |
+   if JMM_Norep == 'Yes':
+     JMM_name
+     JMM_petlist
+     JMM_ndisplan
+   if JMM_Norep == 'No':
+     JMM_name
+     JMM_name_alt
+     JMM_petlist
+     JMM_ndisplan
+  
+---
+Question: What type of supports?
+fields: 
+ - no label: JMM_petlist
+   datatype: checkboxes
+   choices:
+    - Assistance with daily life: JMM_assist
+    - Assistance with social and community participation: JMM_Compart
+    - Coordination of supports: JMM_Cordsup
+    - Improved living arrangements: JMM_live
+    - Increased social and community participation: JMM_inclusion
+    - Finding and keeping a job: JMM_work
+    - Improved daily living: JMM_Life
+    - Improved relationships: JMM_love
+---
+Question: Please enter your contact information.
+subquestion: | 
+Fields:
+   - Name: JMM_name
+   - Number: JMM_number
+   - Email: JMM_email
+   - Physical Adress: JMM_addy
+   - Alternative Contact: JMM_altcon
+---
+Question: Please enter the contact information of who you are signing on behalf of.
+subquestion: | 
+Fields:
+   - Name: JMM_name_alt
+   - Number: JMM_number_alt
+   - Email: JMM_email_alt
+   - Physical Adress: JMM_addy_alt
+   - Alternative Contact: JMM_altcon_alt
+---
+Question: Do you wish to add a copy of your NDIS service plan?
+Yesno: JMM_ndisplan
+---
